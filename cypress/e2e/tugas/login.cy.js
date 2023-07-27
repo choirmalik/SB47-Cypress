@@ -27,8 +27,6 @@ describe('Login Test', () => {
   })
 
   it('Login Failed, Empty Username and Password', () => {
-    cy.get('#txt-username').type('')
-    cy.get('#txt-password').type('')
     cy.get('#btn-login').click()
     cy.get('.text-danger').should('be.visible')
     cy.get('.text-danger').invoke('text').should('contain', 'Login failed');
