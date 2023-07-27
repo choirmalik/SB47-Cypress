@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-27T07:39:24.211Z",
+    "end": "2023-07-27T07:39:46.169Z",
+    "duration": 21958,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f641908a-0988-4b85-8981-a8be67d8d534",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tugas\\login.cy.js",
+      "file": "cypress\\e2e\\tugas\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2c4eaef-36fc-4a0a-8e9b-b97d624ea396",
+          "title": "Login Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login Success",
+              "fullTitle": "Login Test Login Success",
+              "timedOut": null,
+              "duration": 12812,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#txt-username').type('John Doe');\ncy.get('#txt-password').type('ThisIsNotAPassword');\ncy.get('#btn-login').click();\ncy.get('#appointment').should('be.visible');",
+              "err": {},
+              "uuid": "f336df49-3890-469b-bf8f-329ab5c78da0",
+              "parentUUID": "e2c4eaef-36fc-4a0a-8e9b-b97d624ea396",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Failed, Wrong Username",
+              "fullTitle": "Login Test Login Failed, Wrong Username",
+              "timedOut": null,
+              "duration": 2512,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#txt-username').type('John Thor');\ncy.get('#txt-password').type('ThisIsNotAPassword');\ncy.get('#btn-login').click();\ncy.get('.text-danger').should('be.visible');\ncy.get('.text-danger').invoke('text').should('contain', 'Login failed');",
+              "err": {},
+              "uuid": "a1f494a1-ac23-4352-8c86-cd9fb2c6378c",
+              "parentUUID": "e2c4eaef-36fc-4a0a-8e9b-b97d624ea396",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Failed, Wrong Password",
+              "fullTitle": "Login Test Login Failed, Wrong Password",
+              "timedOut": null,
+              "duration": 2863,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#txt-username').type('John Doe');\ncy.get('#txt-password').type('ThisIsAPassword');\ncy.get('#btn-login').click();\ncy.get('.text-danger').should('be.visible');\ncy.get('.text-danger').invoke('text').should('contain', 'Login failed');",
+              "err": {},
+              "uuid": "07a680c5-74da-40f5-8a95-aac65b8f017f",
+              "parentUUID": "e2c4eaef-36fc-4a0a-8e9b-b97d624ea396",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Failed, Empty Username and Password",
+              "fullTitle": "Login Test Login Failed, Empty Username and Password",
+              "timedOut": null,
+              "duration": 1077,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#txt-username').type('');\ncy.get('#txt-password').type('');\ncy.get('#btn-login').click();\ncy.get('.text-danger').should('be.visible');\ncy.get('.text-danger').invoke('text').should('contain', 'Login failed');",
+              "err": {
+                "message": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n    at Context.type (https://katalon-demo-cura.herokuapp.com/__cypress/runner/cypress_runner.js:143868:76)\n    at wrapped (https://katalon-demo-cura.herokuapp.com/__cypress/runner/cypress_runner.js:160816:19)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/tugas/login.cy.js:30:28)",
+                "diff": null
+              },
+              "uuid": "5f684960-afb3-470b-9e89-d1beaa2f3e6d",
+              "parentUUID": "e2c4eaef-36fc-4a0a-8e9b-b97d624ea396",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f336df49-3890-469b-bf8f-329ab5c78da0",
+            "a1f494a1-ac23-4352-8c86-cd9fb2c6378c",
+            "07a680c5-74da-40f5-8a95-aac65b8f017f"
+          ],
+          "failures": [
+            "5f684960-afb3-470b-9e89-d1beaa2f3e6d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 19264,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
